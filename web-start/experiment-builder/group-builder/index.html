@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="../../../fontawesome-free/js/brands.js"></script>
+    <script defer src="../../../fontawesome-free/js/solid.js"></script>
+    <script defer src="../../../fontawesome-free/js/fontawesome.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<div class="group-builder">
+    <p>Group Builder</p>
+
+    <script>
+            function DeleteParent(button) {
+                const ul = document.getElementById("group-builder");
+                button.parentElement.remove();
+            }
+    </script>
+
+    <ul id="group-list"></ul>
+    <input type="text" id="candidate"/>
+
+    <script>
+        function addGroup() {
+            const ul = document.getElementById("group-builder");
+            const candidate = document.getElementById("candidate");
+            const li = document.createElement("li");
+            li.setAttribute('id',candidate.value);
+            li.appendChild(document.createTextNode(candidate.value));
+            ul.appendChild(li);
+        }
+    </script>
+    <button class="add-group-button" onclick="addGroup()"><i class="fas fa-plus"></i></button>
+</div>
+
+<!-- Import and configure the Firebase SDK -->
+<!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+<!-- If you do not want to serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+<script src="/__/firebase/8.6.3/firebase-app.js"></script>
+<script src="/__/firebase/8.6.3/firebase-auth.js"></script>
+<script src="/__/firebase/8.6.3/firebase-storage.js"></script>
+<script src="/__/firebase/8.6.3/firebase-messaging.js"></script>
+<script src="/__/firebase/8.6.3/firebase-firestore.js"></script>
+<script src="/__/firebase/8.6.3/firebase-performance.js"></script>
+<script src="/__/firebase/init.js"></script>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>
